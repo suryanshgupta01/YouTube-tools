@@ -1,0 +1,19 @@
+{
+    "name": "Youtube tools",
+    "version": "1.0",
+    "description": "this is a Youtube tools extension",
+    "manifest_version": 2,
+    "icons": {
+        "128": "youtube.png"
+    },
+    "browser_action": {
+        "default_icon": "youtube.png",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab",
+        "contextMenus",
+        "storage",
+        "tabs"
+    ]
+}
