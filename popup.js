@@ -2,7 +2,6 @@ window.onload = function () {
     var yt = "https://youtube.com/results?search_query="
     document.querySelector('input').focus();
     document.querySelector('input').addEventListener('keydown', (e) => {
-        console.log(document.querySelector('#CC'))
         const CC = document.querySelector('#CC').checked
         const LC = document.querySelector('#LC').checked
         const CF = document.querySelector('#CF').checked
