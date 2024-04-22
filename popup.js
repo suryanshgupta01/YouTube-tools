@@ -8,15 +8,7 @@ window.onload = function () {
         // const ML = document.querySelector('#ML').checked
         // const WD = document.querySelector('#WD').checked
         var tick = "";
-        if (CC) {
-            tick = "codechef solution "
-        }
-        if (LC) {
-            tick = "leetcode solution "
-        }
-        if (CF) {
-            tick = "codeforces solution "
-        }
+
         // if (ML) {
         //     tick = "machine learning "
         // }
@@ -24,7 +16,17 @@ window.onload = function () {
         //     tick = "web development "
         // }
         if (e.key === 'Enter' && document.querySelector('input').value !== '') {
-            chrome.tabs.create({ url: yt + tick + document.querySelector('input').value});
+            if (CF) {
+                tick += "codeforces solution "
+            }
+            if (CC) {
+                tick += "codechef solution "
+            }
+            if (LC) {
+                tick += "leetcode solution "
+            }
+
+            chrome.tabs.create({ url: yt + tick + document.querySelector('input').value });
             document.querySelector('input').value = ''
         }
     })
@@ -70,14 +72,14 @@ window.onload = function () {
             if (e.target.innerHTML === 'songs')
                 url += "PLVhKPW2DjEmmwytzAm9k6Ac4JF-BxPCwi";
             // setTimeout(() => {
-            chrome.tabs.create({ url: url})
+            chrome.tabs.create({ url: url })
             // }, 1000)
         }
     })
 
     document.querySelector('.ytbuttons').addEventListener('click', (e) => {
         if (e.target.innerHTML === 'Edit' || e.target.innerHTML === 'Done' || e.target.className !== 'youtubers') return
-        chrome.tabs.create({ url: yt + e.target.innerHTML});
+        chrome.tabs.create({ url: yt + e.target.innerHTML });
     })
     let editopen = false
     document.querySelector('.editbutton').addEventListener('click', (e) => {
